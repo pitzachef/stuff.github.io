@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry to Disturb</title>
+<style>
+    body{
+        margin:0;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:#ffffff;
+        font-family:Arial, sans-serif;
+        color:#222;
+    }
+
+    .container{
+        max-width:700px;
+        padding:40px;
+    }
+
+    h1{
+        font-size:64px;
+        margin:0 0 20px;
+        font-weight:700;
+    }
+
+    p{
+        font-size:20px;
+        line-height:1.6;
+        color:#555;
+    }
+
+    .line{
+        width:80px;
+        height:4px;
+        background:#222;
+        margin-bottom:30px;
+        border-radius:999px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="line"></div>
+
+    <h1 id="title">Sorry to disturb.</h1>
+
+    <p>
+        Just wanted to say something for you!
+    </p>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+
+    if (name) {
+        document.getElementById("title").textContent =
+            `Sorry to disturb, ${name}.`;
+    }
+</script>
+
+</body>
+</html>
